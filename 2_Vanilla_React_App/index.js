@@ -100,7 +100,7 @@ const rootElement = document.getElementById("root");
 const App = () => {
   return (
     <div>
-      <h1 className="heading">Welcome to React.</h1>
+      <h1 className="heading">Welcome to React App.</h1>
     </div>
   );
 };
