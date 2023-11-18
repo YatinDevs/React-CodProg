@@ -1,6 +1,5 @@
-# React Concepts :
 
-# React Introduction :
+# React Introduction && Concepts:
 - What is React?
 - Why React?
 - Vanilla React Application Creation.(CDN - React,ReactDOM,Babel,JSX).
@@ -10,3 +9,5 @@
 - Organise Components.
 - JSX Rules.
 - CSS in React and CSS Modules.
+
+# Props && Events
