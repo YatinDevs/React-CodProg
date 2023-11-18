@@ -1,7 +1,7 @@
 console.log("script start!");
 
 /*
-//  ## ## Case 1 :
+//  !## ## Case 1 :
 
 const rootElement = document.getElementById("root");
 // We have Linked React library by CDN :
@@ -25,7 +25,7 @@ console.log(element);
 
 /*
 
-// ## ## Case 2 :
+// !## ## Case 2 :
 const rootElement = document.getElementById("root");
 
 function Home() {
@@ -37,7 +37,7 @@ ReactDOM.createRoot(rootElement).render(Home());
 */
 
 /*
-// ## ## Case 3 :
+// !## ## Case 3 :
 
 const rootElement = document.getElementById("root");
 
@@ -59,7 +59,8 @@ ReactDOM.createRoot(rootElement).render(Home());
 
 */
 
-// ## ## Case 4 :
+/*
+// !## ## Case 4 :
 // JSX Solution --> to avoid Tedious work .
 
 const rootElement = document.getElementById("root");
@@ -80,3 +81,28 @@ ReactDOM.createRoot(rootElement).render(<App />);
 // <script type="text/jsx" src="index.js" defer></script>
 // Change type
 // ## ## ##  JSX to React Syntax is Done by Babel
+
+*/
+
+/*
+
+?## ## ##  Things To Remember :
+!Note :
+
+* Libraries Used -> React,ReactDOM.
+* Babel -> (Convert JSX to Actual React Code).
+
+*/
+
+//* Create React Application : (React,ReactDOM,JSX,Babel(JSXtoReactCode)).
+const rootElement = document.getElementById("root");
+
+const App = () => {
+  return (
+    <div>
+      <h1 className="heading">Welcome to React.</h1>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(rootElement).render(<App />);
