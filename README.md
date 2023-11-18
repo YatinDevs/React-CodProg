@@ -1,9 +1,9 @@
+# React Introduction && Basic Concepts:
 
-# React Introduction && Concepts:
 - What is React?
 - Why React?
 - Vanilla React Application Creation.(CDN - React,ReactDOM,Babel,JSX).
-- CRA ,Vite 
+- CRA ,Vite
 - Why JSX ? What is JSX?
 - React Components.
 - Organise Components.
