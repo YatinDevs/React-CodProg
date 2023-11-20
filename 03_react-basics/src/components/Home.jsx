@@ -9,7 +9,8 @@ function Home() {
     padding: "1rem",
   };
 
-  const isDarkmode = false;
+  const isDarkmode = true;
+
   return (
     <>
       <header
@@ -23,12 +24,14 @@ function Home() {
 
         // className={isDarkmode ? "bg-dark" : null}
         // className={isDarkmode && "bg-dark"}
-
         // className={`container ${isDarkmode ? "bg-dark" : null}`}
         // className={`container ${isDarkmode && "bg-dark"}`}
         // className={`container ${isDarkmode ? "bg-dark" : ""}`}
 
-        className={`${styles.container} ${styles2["bg-dark"]}`}
+        // className={`${styles.container} ${styles2["bg-dark"]}`}
+        className={`${styles.container} ${
+          isDarkmode ? styles2["bg-dark"] : ""
+        }`}
       >
         <p>Lorem ipsum dolor sit amet.</p>
         <nav>
