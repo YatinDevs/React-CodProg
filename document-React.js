@@ -206,9 +206,22 @@ Does React need a bundler?
 
 // TODO: ## ## ## ## ## ## ## ## ##  React Components ## ## ## ## ## ## ## ## ## ## ##
 
+/*
+? 1.React application are Entirely made out of Components.
+? 2.Building blocks of user Interfaces in React
+? 3.Piece of UI that has its own data,logic,and appearance(how it works 
+    and looks).
+? 4.we build complex UIs by building multiple components and combining 
+them.
+? 5.Components can be reused ,nested inside each other and pass data 
+between them.
+!Nesting Component.
+
+ */
 /**
  *
  * !1. React Components :
+ * 
  * * - Convention Captial Letter of Component File first Letter.
  *
  * * - if we dont write default while exporting Component.
@@ -228,16 +241,37 @@ Does React need a bundler?
 
 // TODO: ## ## ## ## ## ## ## ## ## JSX Rules. ## ## ## ## ## ## ## ## ## ## ##
 
+/*
+  ? Extension of JS that allows us to embed JS CSS and React 
+  Components into HTML. Components must return a block of JSX.
+  ? Why JSX is Declarative ?:
+
+  * Imperative :
+Manual DOM element selections and DOM traversing.
+Step by Step DOM mutations until we react the desired UI
+
+  * Declarative
+Describe what UI Should look like using JSX, based on current data.
+React is abstraction away from DOM : we never touch the DOM.
+
+ * Declarative Syntax to Describe what Components look like and
+  how they work
+ 
+*/
 /**
  *  TODO : JSX Rules.
  * 
  *  * 1.Instead of class we write className.
     - class is reserved keyword in JSX used for creating classes.
  *  
- *  * 2.In JSX if you want to use JavaScript use {}.
+ *  * 2.JSX Works Essentially like HTML , But we can enter "JS Mode" 
+ *    by using {} (for text or attributes.)
+ *    - We Can place JS expressions inside {} Example : reference
+ *    variable , create arrays or objects, [].map(),ternary operators
+ *  
  *  * 3.Can use all function types.
  *  * 4.Instead of for we use htmlFor.
- *  
+ *  * 5. Statements are not allowed (if/else,for loop,switch).
  */
 
 // TODO: ## ## ## ## ## ## ## ## ## CSS in React Application. ## ## ## ## ## ## ## ## ## ## ##
