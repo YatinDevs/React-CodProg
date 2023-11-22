@@ -35,4 +35,44 @@
   - makes applications easier to debug as we have more control over the data .
   - Is More Performant.
 */
+
+//  !Default Props .
+/* 
+    - The defaultProps is a React component property that allows you to set default values for the props argument.
+    - If the prop property is passed, it will be changed.
+    - The defaultProps can be defined as a property on the component class itself,
+        to set the default props for the class.
+export default function Greeting({
+  firstName,
+  lastName,
+  users,
+ * fullName = "Yatin Chaudhari", --- > Default Props
+}) 
+  */
+
+// !Children Props.
+/*
+   - Children is a prop (this.props.children) that allow you to pass components as data to other components, 
+   just like any other prop you use. 
+   - Component tree put between component's opening and closing tag will be passed to that component as children prop.
+  
+   - There are a number of methods available in the React API to work with this prop. 
+   - These include React.Children.map, React.Children.forEach, React.Children.count,
+    React.Children.only, React.Children.toArray
+
+ 
+*/
+<Greeting>
+  <h1>Hello There</h1>
+  <p>Any thing inside this is children prop</p>{" "}
+</Greeting>;
+/* 
+  TODO : CODPROG 
+  Props :
+  1. React Props .
+  2. Default Props.
+  3. Children Props.
+   
+
+*/
 // TODO : What are Events ?
