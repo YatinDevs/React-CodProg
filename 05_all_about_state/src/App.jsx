@@ -51,6 +51,10 @@ function App() {
       <br></br>
       <br></br>
       <StateObject />
+
+      <>
+        <h1>State Examples </h1>
+      </>
     </div>
   );
 }
