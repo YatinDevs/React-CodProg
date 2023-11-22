@@ -118,3 +118,5 @@ export default function Greeting({
 */
 
 // TODO : What are Events ?
+// Events - Click Event, event Object
+// Wrapper Function
