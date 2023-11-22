@@ -1,11 +1,14 @@
 import React from "react";
 
-const Post = (props) => {
-  console.log(props);
+const Post = ({ name, username }) => {
+  //   console.log();
   return (
     <div>
-      {props.prop.name}
-      {props.prop.username}
+      <ul>
+        <li> Post:</li>
+        <li>{name}</li>
+        <li>{username}</li>
+      </ul>
     </div>
   );
 };

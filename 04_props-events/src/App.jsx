@@ -7,10 +7,10 @@ function App() {
   const users = ["user1", "user2", "user3"];
 
   const Followers = [
-    { name: "Andrew Thomas", username: "AndrewThomas" },
-    { name: "Hulk Buster", username: "HulkBuster" },
-    { name: "Thor", username: "ThunderMaster" },
-    { name: "Natasha", username: "Natasha" },
+    { id: 1, name: "Andrew Thomas", username: "AndrewThomas1" },
+    { id: 2, name: "Hulk Buster", username: "HulkBuster2" },
+    { id: 3, name: "Thor", username: "ThunderMaster3" },
+    { id: 4, name: "Natasha", username: "Natasha4" },
   ];
   return (
     <>

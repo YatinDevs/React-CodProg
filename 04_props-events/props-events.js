@@ -80,19 +80,40 @@ export default function Greeting({
    - These include React.Children.map, React.Children.forEach, React.Children.count,
     React.Children.only, React.Children.toArray
 
+
  
 */
-<Greeting>
-  <h1>Hello There</h1>
-  <p>Any thing inside this is children prop</p>{" "}
-</Greeting>;
+// <Greeting>
+//   <h1>Hello There</h1>
+//   <p>Any thing inside this is children prop</p>{" "}
+// </Greeting>;
+
+// ! Key Props :
+
+/*
+  The key prop is a unique identifier that React uses to efficiently manage and update elements 
+  within a list. When rendering a list of elements, it is crucial to assign a unique key 
+  to each element to help React differentiate between the items and perform updates more 
+  efficiently.
+
+*/
+
+/* for static cases we can pass index as key not for dynamic data 
+        
+ issue is that if data is dynamic and we manipulate 
+ lets say delete the key there can be issue as index will not be in sequence can create bugs
+*/
+
 /* 
-  TODO : CODPROG 
+  TODO : CODPROG
+  React Fragments.
   Props :
   1. React Props .
   2. Default Props.
-  3. Children Props.
-   
+  3. Children Props. 
+  4. Render List.
+  5. Key Prop.
+  6. Events.
 
 */
 
