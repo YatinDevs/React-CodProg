@@ -113,10 +113,22 @@ export default function Greeting({
   3. Children Props. 
   4. Render List.
   5. Key Prop.
-  6. Events.
+  6. Events.-> Passing Events as Props
+
 
 */
 
 // TODO : What are Events ?
 // Events - Click Event, event Object
 // Wrapper Function
+// Passing Events as Props
+
+/*
+  What is the use of event in React?
+  ReactJS Handling Events
+  In essence, event handling in React enables a user to interact with a webpage 
+  and take specified action whenever an event, like a click or a hover, takes place.
+  Events in React are fired when a user interacts with an application,
+  such as mouseovers, key presses, change events, and so on.
+
+*/

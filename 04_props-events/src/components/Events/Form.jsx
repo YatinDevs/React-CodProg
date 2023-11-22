@@ -19,6 +19,7 @@ export default function Form() {
   //   function wrapper() {
   //     handleClick2("Yatin", "Chaudhari");
   //   }
+
   return (
     <div className="form">
       <h1>Form Section - Events Learnings : </h1>

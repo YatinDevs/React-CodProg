@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Greeting from "./components/Greeting";
 import Posts from "./components/PropsPassing/Posts";
 import Form from "./components/Events/Form";
-
 function App() {
   const firstName = "Yatin";
   const lastName = "Chaudhari";
