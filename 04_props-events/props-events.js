@@ -1,3 +1,23 @@
+// TODO : React Fragments ?
+/*
+   ?React Fragements
+
+  - What are the benefits of React fragment? 
+     - With React Fragment, you can render multiple elements of a 
+     component without adding extra div tags. We can write cleaner, 
+     more readable code with React Fragments.
+     - It takes up less memory and renders components faster.
+     Each component is rendered as expected.
+
+  - When should I use React fragments?
+     - When should you use React Fragment.
+     - You should use the React Fragment when you want to add 
+     a parent element to fulfill the JSX syntax, but without 
+     introducing an extra node to the DOM.
+     - After compilation, the fragment component does not make it 
+     to the DOM—only the children element do.
+
+*/
 // TODO : What are props (properties)?
 /*
 - React components use props to communicate with each other.
@@ -76,24 +96,4 @@ export default function Greeting({
 
 */
 
-// TODO : React Fragments ?
-/*
-   ?React Fragements
-
-  - What are the benefits of React fragment? 
-     - With React Fragment, you can render multiple elements of a 
-     component without adding extra div tags. We can write cleaner, 
-     more readable code with React Fragments.
-     - It takes up less memory and renders components faster.
-     Each component is rendered as expected.
-
-  - When should I use React fragments?
-     - When should you use React Fragment.
-     - You should use the React Fragment when you want to add 
-     a parent element to fulfill the JSX syntax, but without 
-     introducing an extra node to the DOM.
-     - After compilation, the fragment component does not make it 
-     to the DOM—only the children element do.
-
-*/
 // TODO : What are Events ?
