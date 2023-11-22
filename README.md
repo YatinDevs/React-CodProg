@@ -263,8 +263,6 @@ Whole React Ecosystem feels like a Framework. -->
 
 <!--  ? - React Dev Tools ,Chrome Dev Tools, Redux Dev Tools. - -->
 
-\*/
-
  <!-- TODO: ## ## ## ## ## ## ## ## ## JSX  ## ## ## ## ## ## ## ## ## ## ## -->
 
 <!-- ! What is JSX ? -->
@@ -338,7 +336,7 @@ Exception: aria-_ and data-_ are written with dashes like in HTML.
 5. CSS inline styles are written like this : {{<style>}}
    (to reference variable , and then an object)
 6. CSS property names are also camelCased.
-7. # Comments need to be in {} (because they are JS.)
+7. Comments need to be in {} (because they are JS.)
 
 <!--  TODO: ## ## ## ## ## ## ## ## ## CSS in React Application. ## ## ## ## ## ## ## ## ## ## ## -->
 

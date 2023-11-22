@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Greeting({ firstName, lastName }) {
+  console.log(firstName, lastName);
   return (
     <div>
       <h1>
