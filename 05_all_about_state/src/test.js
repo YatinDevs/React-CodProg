@@ -9,3 +9,19 @@ let person = {
 
 let newperson = { ...person, age: 30 };
 console.log(newperson);
+
+//  Basic Way
+// const increaseAge = (id) => {
+//   console.log("increased Age", id);
+
+//   const newState = [];
+//   for (let user of users) {
+//     if (user.id === id) {
+//       newState.push({ ...user, age: user.age + 1 });
+//     } else {
+//       newState.push(user);
+//     }
+//   }
+
+//   setUsers(newState);
+// };
