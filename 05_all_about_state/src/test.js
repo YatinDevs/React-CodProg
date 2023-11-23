@@ -10,7 +10,7 @@ let person = {
 let newperson = { ...person, age: 30 };
 console.log(newperson);
 
-//  Basic Way
+//  Basic Way to Manipulate
 // const increaseAge = (id) => {
 //   console.log("increased Age", id);
 
@@ -25,3 +25,50 @@ console.log(newperson);
 
 //   setUsers(newState);
 // };
+
+//  Basic Way to  Delete
+// const increaseAge = (id) => {
+//   console.log("increased Age", id);
+
+//   const newState = [];
+//   for (let user of users) {
+//     if (user.id !== id) {
+//       newState.push(user);
+//     }
+//   }
+
+//   setUsers(newState);
+// };
+
+// React Ways:
+/*
+   
+  const increaseAge = (id) => {
+    setUsers((prevState) => {
+      return prevState.map((user) => {
+        if (user.id === id) {
+          return { ...user, age: user.age + 1 };
+        } else {
+          return user;
+        }
+      });
+    });
+  };
+
+  const deleteUser = (id) => {
+    setUsers((prevState) => {
+      return prevState.filter((user) => {
+        if (user.id !== id) {
+          return user;
+        }
+      });
+    });
+  };
+ 
+   
+  const deleteUser = (id) => {
+    setUsers((prevState) => {
+      return prevState.filter((user) => user.id !== id);
+    });
+  };
+*/

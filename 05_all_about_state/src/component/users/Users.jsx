@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 import "./user.css";
 import User from "./User";
 
-const Users = ({ users, increaseAge }) => {
+const Users = ({ users, increaseAge, deleteUser }) => {
   console.log("Users rendered");
 
   return (
@@ -11,7 +11,12 @@ const Users = ({ users, increaseAge }) => {
       <ul>
         {users
           ? users.map((user) => (
-              <User {...user} key={user.id} increaseAge={increaseAge} />
+              <User
+                {...user}
+                key={user.id}
+                increaseAge={increaseAge}
+                deleteUser={deleteUser}
+              />
             ))
           : ""}
       </ul>

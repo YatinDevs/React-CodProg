@@ -2,7 +2,7 @@ import React from "react";
 import "./user.css";
 import { v4 as uuid } from "uuid";
 
-const User = ({ age, firstName, lastName, id, increaseAge }) => {
+const User = ({ age, firstName, lastName, id, increaseAge, deleteUser }) => {
   console.log("User rendered");
 
   return (
@@ -18,6 +18,13 @@ const User = ({ age, firstName, lastName, id, increaseAge }) => {
         }}
       >
         Increase Age
+      </button>
+      <button
+        onClick={() => {
+          deleteUser(id);
+        }}
+      >
+        Delete User
       </button>
     </div>
   );

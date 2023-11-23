@@ -35,10 +35,26 @@ function Example1() {
       });
     });
   };
+
+  // const deleteUser = (id) => {
+  //   setUsers((prevState) => {
+  //     return prevState.filter((user) => {
+  //       if (user.id !== id) {
+  //         return user;
+  //       }
+  //     });
+  //   });
+  // };
+
+  const deleteUser = (id) => {
+    setUsers((prevState) => {
+      return prevState.filter((user) => user.id !== id);
+    });
+  };
   return (
     <div>
       <h1>State Example</h1>
-      <Users users={users} increaseAge={increaseAge} />
+      <Users users={users} increaseAge={increaseAge} deleteUser={deleteUser} />
     </div>
   );
 }
