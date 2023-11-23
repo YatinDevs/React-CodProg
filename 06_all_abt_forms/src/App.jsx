@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import HandleMultipleInputs from "./components/HandleMultipleInputs";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -17,6 +18,10 @@ function App() {
     e.preventDefault();
     console.log("Form Submitted!!");
   };
+
+  // Radio Buttons :
+  const [gender, setGender] = useState("female");
+
   return (
     <div className="App">
       <h1>Forms In React</h1>
@@ -55,6 +60,36 @@ function App() {
       password : {password}
       <br></br>
       email : {email}
+      {/* <>Radio Button</> */}
+      <h2>Radio Buttons</h2>
+      <label htmlFor="male">Male</label>
+      <input
+        type="radio"
+        checked={gender === "male" ? true : false}
+        onChange={() => {
+          setGender("male");
+        }}
+      />
+      <br></br>
+      <label htmlFor="female">Female</label>
+      <input
+        type="radio"
+        checked={gender === "female" ? true : false}
+        onChange={() => {
+          setGender("female");
+        }}
+      />
+      <br></br>
+      <label htmlFor="others">Others</label>
+      <input
+        type="radio"
+        checked={gender === "others" ? true : false}
+        onChange={() => {
+          setGender("others");
+        }}
+      />
+      {/* Handle Form INput with Single Function */}
+      <HandleMultipleInputs />
     </div>
   );
 }
