@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ title, completed, id }) => {
+const Todo = ({ title, completed, id, toggleCompleted }) => {
   return (
     <div
       style={{
@@ -11,7 +11,13 @@ const Todo = ({ title, completed, id }) => {
     >
       <p> Id : {id}</p>
       <p> Title : {title}</p>
-      <p> Status : {completed ? "Completed" : "Not Completed"}</p>
+      <input
+        type="checkbox"
+        checked={completed}
+        onChange={() => {
+          toggleCompleted(id);
+        }}
+      />
     </div>
   );
 };

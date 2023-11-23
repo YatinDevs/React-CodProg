@@ -40,6 +40,20 @@ console.log(newperson);
 //   setUsers(newState);
 // };
 
+const toggleCompleted = (id) => {
+  console.log(id, "toggle Completed");
+
+  const newTodos = [];
+  for (let todo of todos) {
+    if (todo.id === id) {
+      newTodos.push({ ...todo, completed: !todo.completed });
+    } else {
+      newTodos.push(todo);
+    }
+  }
+  setTodos(newTodos);
+};
+
 // React Ways:
 /*
    
@@ -71,4 +85,18 @@ console.log(newperson);
       return prevState.filter((user) => user.id !== id);
     });
   };
+
+  
+const toggleCompleted = (id) => {
+  console.log(id, "toggle Completed");
+  setTodos((prevState) => {
+    return prevState.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      } else {
+        return todo;
+      }
+    });
+  });
+};
 */
