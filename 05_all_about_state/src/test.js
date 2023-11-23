@@ -54,6 +54,16 @@ const toggleCompleted = (id) => {
   setTodos(newTodos);
 };
 
+const removeTodo = (id) => {
+  console.log(id, "removed Todo");
+  const newTodos = [];
+  for (let todo of todos) {
+    if (todo.id !== id) {
+      newTodos.push(todo);
+    }
+  }
+  setTodos(newTodos);
+};
 // React Ways:
 /*
    
@@ -99,4 +109,17 @@ const toggleCompleted = (id) => {
     });
   });
 };
+
+
+  const removeTodo = (id) => {
+    console.log(id, "removed Todo");
+
+    setTodos((prevState) => {
+      return prevState.filter((todo) => {
+        if (todo.id !== id) {
+          return todo;
+        }
+      });
+    });
+  };
 */

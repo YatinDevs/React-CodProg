@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./index.css";
 import TodoForm from "./components/TodoForm";
 import TodosDisplay from "./components/TodosDisplay";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -10,12 +12,15 @@ function App() {
     { id: 3, title: "Learn TypeScript", completed: false },
   ]);
 
+  // ?React JS Ways
+
   const addTodo = (newTodo) => {
-    console.log("newTodo added!");
-    console.log(newTodo);
-    setTodos((prevState) => {
-      return [...prevState, newTodo];
-    });
+    const newTodos = [];
+    for (let todo of todos) {
+      newTodos.push(todo);
+    }
+    newTodos.push(newTodo);
+    setTodos(newTodos);
   };
 
   const toggleCompleted = (id) => {
@@ -30,25 +35,29 @@ function App() {
       });
     });
   };
-  // const toggleCompleted = (id) => {
-  //   console.log(id, "toggle Completed");
 
-  //   const newTodos = [];
-  //   for (let todo of todos) {
-  //     if (todo.id === id) {
-  //       newTodos.push({ ...todo, completed: !todo.completed });
-  //     } else {
-  //       newTodos.push(todo);
-  //     }
-  //   }
-  //   setTodos(newTodos);
-  // };
+  const removeTodo = (id) => {
+    console.log(id, "removed Todo");
+
+    setTodos((prevState) => {
+      return prevState.filter((todo) => {
+        if (todo.id !== id) {
+          return todo;
+        }
+      });
+    });
+  };
+
   return (
-    <div>
+    <div className="container">
+      <ToastContainer />
       <h1 className="main-title">Todo List</h1>
-      {/* todoForm */} <TodoForm addTodo={addTodo} />
-      {/* todosDisplays */}{" "}
-      <TodosDisplay todos={todos} toggleCompleted={toggleCompleted} />
+      <TodoForm addTodo={addTodo} />
+      <TodosDisplay
+        todos={todos}
+        toggleCompleted={toggleCompleted}
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }

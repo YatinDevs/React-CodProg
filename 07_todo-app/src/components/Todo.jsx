@@ -1,23 +1,29 @@
 import React from "react";
+import "../index.css";
+import { ImCross } from "react-icons/im";
 
-const Todo = ({ title, completed, id, toggleCompleted }) => {
+const Todo = ({ title, completed, id, toggleCompleted, removeTodo }) => {
   return (
-    <div
-      style={{
-        border: "2px solid #242424",
-        padding: "1rem",
-        margin: "1rem",
-      }}
-    >
-      <p> Id : {id}</p>
-      <p> Title : {title}</p>
-      <input
-        type="checkbox"
-        checked={completed}
-        onChange={() => {
-          toggleCompleted(id);
+    <div className="todo">
+      <div className="todo-title">
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={() => {
+            toggleCompleted(id);
+          }}
+        />
+        <p className={`${completed ? "completed" : ""}`}> {title}</p>
+      </div>
+
+      <div
+        className="cross-btn"
+        onClick={() => {
+          removeTodo(id);
         }}
-      />
+      >
+        <ImCross />
+      </div>
     </div>
   );
 };
