@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import DisplayFullName from "./DisplayFullName";
 
 function UserForm() {
   console.log("userForm rendered!");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [fullName, setFullName] = useState("");
+  //   const [fullName, setFullName] = useState("");
+  const fullName = firstName + " " + lastName;
+
   return (
     <form>
       <h1>Form</h1>
@@ -17,7 +20,7 @@ function UserForm() {
           value={firstName}
           onChange={(e) => {
             setFirstName(e.target.value);
-            setFullName(e.target.value + " " + lastName);
+            // setFullName(e.target.value + " " + lastName);
           }}
         />
       </div>
@@ -31,7 +34,7 @@ function UserForm() {
           value={lastName}
           onChange={(e) => {
             setLastName(e.target.value);
-            setFullName(firstName + " " + e.target.value);
+            // setFullName(firstName + " " + e.target.value);
           }}
         />
       </div>
@@ -39,7 +42,9 @@ function UserForm() {
       <div>
         <p>Firstname : {firstName}</p>
         <p>Lastname : {lastName}</p>
-        <p>Fullname : {fullName}</p>
+        <p>
+          Fullname : <DisplayFullName fullName={fullName} />
+        </p>
       </div>
     </form>
   );
