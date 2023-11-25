@@ -351,7 +351,7 @@ padding: "1rem",
 };
 style={cssStyles}
 
-    <!-- * 2. we can directly do inline style -->
+<!-- * 2. we can directly do inline style -->
         style={{
           backgroundColor: "lightblue",
           fontFamily: "sans-serif",
@@ -359,7 +359,7 @@ style={cssStyles}
           padding: "1rem",
         }}
 
-    <!-- * 3. we can import external style sheet -->
+ <!-- * 3. we can import external style sheet -->
 
          import "./FirstComponent.css";
 
