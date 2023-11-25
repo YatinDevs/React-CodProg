@@ -57,6 +57,16 @@ function HandleMultipleInputs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    setFormData({
+      fname: "",
+      lname: "",
+      username: "",
+      email: "",
+      password: "",
+      cpassword: "",
+      phone: "",
+      address: "",
+    });
   };
 
   const { fname, lname, username, email, password, cpassword, phone, address } =
