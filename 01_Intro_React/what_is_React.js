@@ -65,13 +65,19 @@ the React ecosystem. Always refer to the official documentation for
 */
 // TODO: ## ## ## ## ## ## ## ## ## ## Intro to React ## ## ## ## ## ## ## ## ##
 // *What is React ?
-
+/*
+ */
 /*
    React is a FrontEnd Library For Building USER INTERFACES.
  */
 
 // * Why React?
-
+/*
+  - Faster Performance.
+  - Less costly to Servers.
+  - Single Page Applications.
+  - cross- Platform language library
+*/
 /**
  *
  * 1. React is Most Popular Front End Library for Building User Interfaces.
@@ -87,6 +93,12 @@ the React ecosystem. Always refer to the official documentation for
 // Before Class Based Component && Function Based Components.
 // Currently Function base Components with React Hooks.
 
+// * Disadvantages of React?
+/*
+  - Docs are not that Good.
+  - Developer community small compared to Js 
+  - Complex JsX instead of Html css js.
+*/
 // * ## ## Framework vs Library.
 /*
   Framework Provides more functionality but it does not provide much flexibility.
