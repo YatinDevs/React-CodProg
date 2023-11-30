@@ -28,7 +28,7 @@ function RockBandList() {
   return (
     <ol>
       {rockBands.map((band) => (
-        <RockBand name={band.name} key={crypto.randomUUID()} />
+        <RockBand name={band.name} key={band.id} />
       ))}
       <button onClick={addNewRockBand}>Add new Rock Band</button>
     </ol>

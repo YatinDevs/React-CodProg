@@ -4,7 +4,7 @@ function RockBand({ name }) {
   //   console.log(name);
   return (
     <div>
-      <li>hello</li>
+      <li>{name}</li>
     </div>
   );
 }
