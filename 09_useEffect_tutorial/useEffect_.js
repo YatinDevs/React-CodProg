@@ -38,3 +38,13 @@
 // event listener with useEffect and cleanup function in useEffect.
 
 // ? - 6. Abort Network Request When Component unMounts.
+
+// ? - 7. useEffect in Strict Mode.
+
+// strict Mode Flow :
+// On Component Mount .
+// Effect Runs.
+// Clean up Runs.
+// Effect Runs.
+
+// ? - 8. Focus on Input when component mounts.

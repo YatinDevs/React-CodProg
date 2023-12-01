@@ -35,27 +35,35 @@ function FetchDataExample() {
   //     });
   // }, []);
 
-  // 2. async await.
-  const fetchData = async () => {
-    setIsLoading(true);
-    const response = await fetch(URL);
-    console.log(response);
-    if (!(response.status >= 200 && response.status <= 299)) {
-      setIsError(true);
-      setErrormsg(`${response.status} Error`);
-      setIsLoading(false);
-      return;
-    }
-    const data = await response.json();
-    console.log(data);
-    setUsers(data);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
-    console.log("Inside use Effect fetch..");
+    console.log("Inside useEffect Callback..");
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+    // 2. async await.
+    const fetchData = async () => {
+      console.log("Inside fetchData func..");
+
+      // setIsLoading(true);
+      const response = await fetch(URL, { signal: signal });
+      console.log(response);
+      if (!(response.status >= 200 && response.status <= 299)) {
+        setIsError(true);
+        setErrormsg(`${response.status} Error`);
+        setIsLoading(false);
+        return;
+      }
+      const data = await response.json();
+      console.log(data);
+      setUsers(data);
+      setIsLoading(false);
+    };
 
     fetchData();
+    return function () {
+      console.log("cleanup aborting Request..");
+      controller.abort();
+    };
   }, []);
 
   if (isLoading) {
