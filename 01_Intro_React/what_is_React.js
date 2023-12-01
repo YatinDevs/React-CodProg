@@ -314,3 +314,21 @@ Does React need a bundler?
 /*
    props : read Only / Immutable
 */
+
+/*
+   Theory Around  React:
+   
+   - JS (Raw) --> 2011 FB --> React
+      
+   - Js(Raw) -Had some issues :
+      - Performance.
+      - Modularity (writting it was Complex ).
+          - file -> Segregation in different files.
+      - Error Prone. (as Compared to React).
+      - Interaction with DOM was Difficult.
+          - In DOM:
+            - Super Costly : 
+              - In Case of Computer Reasources .
+              - Whole DOM re-renders (to Many Server/API calls).
+              - Which is affecting transfer of data which is costly.
+*/

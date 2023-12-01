@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import ExampleUseEff from "./components/ExampleUseEff";
 import FetchDataExample from "./components/FetchDataExample";
+import CleanupFunctionDemo from "./components/CleanupFunctionDemo";
+import MouseMoveEvent from "./components/MouseMoveEvent";
 
 // UseEffect Hook: (is All about SideEffect)--> Anything Not related to React.
 // 3 Cases of UseEffect :
@@ -12,10 +14,32 @@ import FetchDataExample from "./components/FetchDataExample";
 
 // Clean Up Function :
 function App() {
+  const [showComponent, setShowComponent] = useState(true);
+
+  // const handleChange = (e) => {
+  //   if (!e.target.checked) {
+  //     setShowComponent(false);
+  //   } else {
+  //     setShowComponent(true);
+  //   }
+  // };
+
   return (
     <div>
       {/* <ExampleUseEff /> */}
-      <FetchDataExample />
+      {/* <FetchDataExample /> */}
+      <label htmlFor="showComponent">show Component</label>
+      <input
+        type="checkbox"
+        name="showComponent"
+        id="showComponent"
+        checked={showComponent}
+        onChange={() => setShowComponent(!showComponent)}
+      />
+      {/* {showComponent && <CleanupFunctionDemo />} */}
+      {/* {showComponent && <MouseMoveEvent />} */}
+      {/* - 6. Abort Network Request When Component unMounts. */}
+      {showComponent && <FetchDataExample />}
     </div>
   );
 }
