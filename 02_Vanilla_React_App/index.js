@@ -142,3 +142,5 @@ ReactDOM.createRoot(rootElement).render(<App />);
    * main.jsx
    - if Jsx is present we need to use .jsx extension.
  */
+
+// JSX -> javascript  xml
