@@ -27,9 +27,11 @@ function ExampleUseEff() {
   useEffect(() => {
     console.log("Inside UseEffect....");
   }, [counter]);
+
   return (
     <div>
       <h1>{counter}</h1>
+      {console.log("component")}
       <button onClick={() => setCounter((n) => n + 1)}>Increase</button>
       <h2>{counter2}</h2>
       <button onClick={() => setCounter2((n) => n + 1)}>Increase</button>

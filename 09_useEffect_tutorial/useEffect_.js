@@ -30,6 +30,10 @@
         - Component re-renders.
         - clean up Function runs.
         - useEffect Runs.
+        https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+
 */
 // case1 : initial render only.
 // case2 : with dependancies array.

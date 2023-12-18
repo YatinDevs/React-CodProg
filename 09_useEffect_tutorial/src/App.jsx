@@ -27,16 +27,16 @@ function App() {
 
   return (
     <div>
-      {/* <ExampleUseEff /> */}
+      <ExampleUseEff />
       {/* <FetchDataExample /> */}
-      <label htmlFor="showComponent">show Component</label>
+      {/* <label htmlFor="showComponent">show Component</label>
       <input
         type="checkbox"
         name="showComponent"
         id="showComponent"
         checked={showComponent}
         onChange={() => setShowComponent(!showComponent)}
-      />
+      /> */}
       {/* {showComponent && <CleanupFunctionDemo />} */}
       {/* {showComponent && <MouseMoveEvent />} */}
       {/* - 6. Abort Network Request When Component unMounts. */}
@@ -44,7 +44,7 @@ function App() {
 
       {/* // ? - 8. Focus on Input when component mounts. */}
 
-      <UserForm />
+      {/* <UserForm /> */}
     </div>
   );
 }
