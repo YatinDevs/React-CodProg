@@ -14,6 +14,9 @@ function FormSplitBill() {
       <label>📈 X's Expenses Value 💲</label>
       <input type="text" />
 
+      <label> 🤑Who will Pay the Bill?</label>
+      <input></input>
+
       <Button>Split Bill</Button>
     </form>
   );
