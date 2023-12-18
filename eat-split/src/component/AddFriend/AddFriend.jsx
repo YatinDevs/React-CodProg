@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 
-function AddFriend({ setFriends }) {
+function AddFriend({ handleAddNewFriend }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/42");
 
-  const handleAddNew = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
 
     if (!name || !image) return;
+
     const id = crypto.randomUUID();
     const newFriend = {
       id,
@@ -17,13 +18,14 @@ function AddFriend({ setFriends }) {
       balance: 0,
     };
 
-    setFriends((prev) => [...prev, newFriend]);
     console.log(newFriend, "newFriend");
+    handleAddNewFriend(newFriend);
+
     setName("");
     setImage("https://i.pravatar.cc/42");
-  };
+  }
   return (
-    <form className="form-add-friend">
+    <form className="form-add-friend" onSubmit={handleSubmit}>
       <label>🤞Friend Name</label>
       <input
         type="text"
@@ -36,7 +38,7 @@ function AddFriend({ setFriends }) {
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <Button onClick={handleAddNew}>Add</Button>
+      <Button>Add</Button>
     </form>
   );
 }
