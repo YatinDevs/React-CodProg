@@ -2,9 +2,23 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import useFetch from "./hooks/useFetch";
 function App() {
-  const { products } = useFetch("https://dummyjson.com/products");
-  console.log(products);
+  console.log(`App rendered`);
+  const { products, isLoading, error } = useFetch(
+    "https://dummyjson.com/products"
+  );
+  console.log(products, `data from Api`);
 
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Imagine A Fancy Loader</h1>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
   return (
     <div>
       <h1
