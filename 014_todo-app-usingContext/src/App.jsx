@@ -5,6 +5,7 @@ import DisplayTodos from "../src/components/DisplayTodos/DisplayTodos";
 import TodosContextProvider from "./context/TodosContextProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyComponent from "./components/ReactPortal/MyComponent";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <AddTodoForm />
         <DisplayTodos />
       </div>
+      <MyComponent />
     </TodosContextProvider>
   );
 }
