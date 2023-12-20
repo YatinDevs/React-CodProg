@@ -12,7 +12,7 @@ function UserProfile() {
   };
   return (
     <div>
-      <h3>User Profile</h3>
+      <h3>{auth.username ? "User Profile" : "Login User"}</h3>
       {auth.username ? (
         <BasicDetails />
       ) : (
