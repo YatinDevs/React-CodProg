@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useReducer } from "react";
 import "./App.css";
+import Counter from "./components/Counter";
 
 // ! 1 .useReducer Hook:
 
@@ -55,14 +56,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>useReducer Tutorial</h1>
+      {/* <h1>useReducer Tutorial</h1>
       <hr />
       <h2>Counter Application</h2>
       <p>Hello {state.firstName}</p>
       <h2>{state.count}</h2>
       <button onClick={handleIncrease}>Increase</button>
       <button onClick={handleReset}>Reset</button>
-      <button onClick={handleDecrease}>Decrease</button>
+      <button onClick={handleDecrease}>Decrease</button> */}
+      <Counter />
     </div>
   );
 }
