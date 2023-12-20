@@ -4,6 +4,8 @@ import "./index.css";
 import AddFriend from "./component/AddFriend/AddFriend";
 import Button from "./component/Button/Button";
 import FormSplitBill from "./component/FormSplitBill/FormSplitBill";
+import UserProfile from "./component/UserProfile/UserProfile";
+import ExampleChildren from "./component/404/ExampleChildren";
 
 const initialFriends = [
   {
@@ -49,6 +51,7 @@ const App = () => {
         </Button>
       </div>
       <FormSplitBill />
+      <UserProfile />
     </div>
   );
 };
