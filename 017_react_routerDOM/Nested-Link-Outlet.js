@@ -1,49 +1,3 @@
-// first v5
-// we will see v6.0
-
-// install react-router-dom package :
-// - npm install react-router-dom
-
-/*
- 
- !1 Basic Overview of React-Router DOM
-import React from "react";
-
-* useCase :
-* step 1 : import 4 things :
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-
-* step 2: create router
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route>
-      <Route path="/" element={<h1>HomePage</h1>} />
-      <Route path="/about" element={<h1>AboutPage</h1>} />
-      <Route path="/contact" element={<h1>Contact</h1>} />
-      <Route path="/post" element={<h1>Posts</h1>} />
-      <Route path="*" element={<h1>PageNotFound</h1>} />
-    </Route>
-  )
-);
-
-function App() {
-  return (
-    <div>
-      <RouterProvider router={router}></RouterProvider>
-    </div>
-  );
-}
-
-export default App;
-
-*/
-
 // !2 Nested Routes ,Link ,Outlet
 /*
  
@@ -71,6 +25,19 @@ In React Router DOM, the concept of an outlet is implicit.
 When you define nested Route components, the content of the matched route is 
 automatically rendered at the location of the parent Route.
 
+- Link :
+- using anchor and href to navlinks page refreshes.
+
+? - Navigation Link (NavLink):
+
+The NavLink component is used for creating navigation links in a React application.
+It is an extension of the Link component with additional features.
+The NavLink component allows you to apply styles or add custom classNames to
+the active link based on the current route.
+
+- In summary, NavLink is a powerful component in React Router DOM that enhances
+ the functionality of Link by providing features for styling active navigation 
+ links based on the current route. It's commonly used in navigation menus to
+ highlight the active link and improve the user experience.
+
 */
-// Link :
-// using anchor and href to navlinks page refreshes.

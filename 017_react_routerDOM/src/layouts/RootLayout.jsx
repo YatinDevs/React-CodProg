@@ -1,22 +1,51 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import "./style.css";
+import styles from "./RootLayout.module.css";
 function RootLayout() {
   return (
     <div>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={(obj) => {
+                return obj.isActive ? styles.activeNav : null;
+              }}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink
+              to="/about"
+              className={(obj) => {
+                return obj.isActive ? "activeNav" : null;
+              }}
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink
+              to="/contact"
+              className={(obj) => {
+                return obj.isActive ? "activeNav" : null;
+              }}
+            >
+              Contact
+            </NavLink>
           </li>
           <li>
-            <Link to="/post">Posts</Link>
+            <NavLink
+              to="/post"
+              className={({ isActive }) => {
+                return isActive ? "activeNav" : null;
+              }}
+            >
+              Posts
+            </NavLink>
           </li>
         </ul>
       </nav>
