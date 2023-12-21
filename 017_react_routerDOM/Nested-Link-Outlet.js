@@ -57,4 +57,7 @@ Usage: It is typically used within a component that is rendered by a Route
 useParams is commonly used with dynamic route parameters specified in the route
  path using a colon syntax.
 
+
+!6 - Protected Routes :
+
 */
