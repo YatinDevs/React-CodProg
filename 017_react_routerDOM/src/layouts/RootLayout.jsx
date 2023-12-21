@@ -39,7 +39,7 @@ function RootLayout() {
           </li>
           <li>
             <NavLink
-              to="/post"
+              to="/posts"
               className={({ isActive }) => {
                 return isActive ? "activeNav" : null;
               }}

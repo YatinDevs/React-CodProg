@@ -28,7 +28,7 @@ automatically rendered at the location of the parent Route.
 - Link :
 - using anchor and href to navlinks page refreshes.
 
-? - Navigation Link (NavLink):
+!3 Navigation Link (NavLink):
 
 The NavLink component is used for creating navigation links in a React application.
 It is an extension of the Link component with additional features.
@@ -39,5 +39,22 @@ the active link based on the current route.
  the functionality of Link by providing features for styling active navigation 
  links based on the current route. It's commonly used in navigation menus to
  highlight the active link and improve the user experience.
+
+!4 - Fetch Posts
+https://jsonplaceholder.typicode.com/posts
+
+!5 - useParams :
+
+Purpose: useParams is a hook provided by the React Router library. 
+It is used to access parameters from the current route in a React component.
+
+Usage: It is typically used within a component that is rendered by a Route
+ component in a React Router setup.
+
+* *** dynamic route parameters 
+<Route path="/users/:userId" component={UserProfile} />
+
+useParams is commonly used with dynamic route parameters specified in the route
+ path using a colon syntax.
 
 */
