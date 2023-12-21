@@ -40,8 +40,8 @@ function useFetch(url) {
       controller.abort();
     };
   }, [url]);
-  const { products } = data;
-  return { products, isLoading, error };
+
+  return { data, isLoading, error };
 }
 
 export default useFetch;
