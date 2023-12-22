@@ -6,6 +6,7 @@ import Button from "./component/Button/Button";
 import FormSplitBill from "./component/FormSplitBill/FormSplitBill";
 import UserProfile from "./component/UserProfile/UserProfile";
 import ExampleChildren from "./component/404/ExampleChildren";
+import useTheme from "./context/themeProvider";
 
 const initialFriends = [
   {
@@ -29,6 +30,8 @@ const initialFriends = [
 ];
 
 const App = () => {
+  const theme = useTheme();
+  // console.log(theme);
   const [showAddFriend, setShowAddFriend] = useState(false);
   const [friends, setFriends] = useState(initialFriends);
   const [selectedFriend, setSelectedFriend] = useState(null);
@@ -43,9 +46,10 @@ const App = () => {
 
   function handleSelector(friend) {
     setSelectedFriend((prev) => (prev?.id === friend?.id ? null : friend));
+    setShowAddFriend(false);
   }
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
       <div className="sidebar">
         <FriendsList
           friends={friends}
