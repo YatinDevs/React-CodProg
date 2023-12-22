@@ -71,7 +71,7 @@ function RootLayout() {
         </ul>
         {isLoggedIn && (
           <button
-            onClick={() => setIsLoggedIn((prev) => !prev)}
+            onClick={() => setIsLoggedIn(false)}
             style={{
               marginLeft: "2rem",
               borderRadius: "15px",

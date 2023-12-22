@@ -1,24 +1,27 @@
 import React from "react";
 import Button from "../Button/Button";
 
-export const Friend = ({ name, id, image, balance }) => {
+export const Friend = ({ friend, onSelection, selectedFriend }) => {
+  const isSelected = friend.id === selectedFriend?.id;
   return (
-    <li>
-      <img src={image} alt="friends-image" />
-      <h3> {name}</h3>
-      {balance > 0 && (
+    <li className={isSelected ? "selected" : ""}>
+      <img src={friend.image} alt="friends-image" />
+      <h3> {friend.name}</h3>
+      {friend.balance > 0 && (
         <p className="green">
-          {name} Owes You {balance} <span>&#8377;</span> amount.
+          {friend.name} Owes You {friend.balance} <span>&#8377;</span> amount.
         </p>
       )}
-      {balance < 0 && (
+      {friend.balance < 0 && (
         <p className="red">
-          You owe {name} {balance} <span>&#8377;</span> amount.
+          You owe {friend.name} {friend.balance} <span>&#8377;</span> amount.
         </p>
       )}
-      {balance === 0 && <p>You and {name} are Even.</p>}
+      {friend.balance === 0 && <p>You and {friend.name} are Even.</p>}
 
-      <Button>Select</Button>
+      <Button onClick={() => onSelection(friend)}>
+        {isSelected ? "Selected" : "Select"}
+      </Button>
     </li>
   );
 };

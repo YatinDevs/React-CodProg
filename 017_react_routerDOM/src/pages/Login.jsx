@@ -8,7 +8,7 @@ function Login() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    setIsLoggedIn((prev) => !prev);
+    setIsLoggedIn(true);
     navigate("/", { replace: true }); // login and replace
   }
   return (
