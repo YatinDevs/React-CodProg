@@ -8,7 +8,7 @@ function Posts() {
   async function fetchPosts() {
     const response = await fetch(endpoint);
     const data = await response.json();
-    console.log(posts);
+    // console.log(posts);
     setPosts(data);
   }
 

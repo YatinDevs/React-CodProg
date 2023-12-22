@@ -19,6 +19,7 @@ import {
 } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import RequireAuth from "./components/RequireAuth";
+import { AuthProvider } from "./context/AuthProvider";
 
 // step 2: create router
 
@@ -46,9 +47,9 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
-    </div>
+    </AuthProvider>
   );
 }
 

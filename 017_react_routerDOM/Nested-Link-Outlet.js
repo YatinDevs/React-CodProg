@@ -59,5 +59,26 @@ useParams is commonly used with dynamic route parameters specified in the route
 
 
 !6 - Protected Routes :
+ - RequireAuth
+ 
+import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+function RequireAuth({ children }) {
+  const loggedIn = false;
+  if (loggedIn) {
+    return children;
+  }
+  return <Navigate to="/login" />;
+}
 
+export default RequireAuth;
+
+ <Route
+        path="posts"
+        element={
+          <RequireAuth>
+            <Posts />
+          </RequireAuth>
+        }
+      />
 */
