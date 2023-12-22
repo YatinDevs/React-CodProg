@@ -20,7 +20,7 @@ function FormSplitBill({ selectedFriend, onSplitBill }) {
         ? (balanceval = bill - paidbyUser)
         : (balanceval = bill - paidByFriend)
     ) {
-      onSplitBill(balanceval, id);
+      onSplitBill(balanceval, id, whoIsPaying);
     }
   };
 

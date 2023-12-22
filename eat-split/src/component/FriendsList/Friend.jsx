@@ -7,18 +7,19 @@ export const Friend = ({ friend, onSelection, selectedFriend }) => {
     <li className={isSelected ? "selected" : ""}>
       <img src={friend.image} alt="friends-image" />
       <h3> {friend.name}</h3>
-      {friend.balance > 0 && (
-        <p className="green">
-          {friend.name} Owes You {friend.balance} <span>&#8377;</span> amount.
-        </p>
-      )}
       {friend.balance < 0 && (
         <p className="red">
-          You owe {friend.name} {friend.balance} <span>&#8377;</span> amount.
+          You owe {friend.name} {Math.abs(friend.balance)}₹
         </p>
       )}
-      {friend.balance === 0 && <p>You and {friend.name} are Even.</p>}
 
+      {friend.balance > 0 && (
+        <p className="green">
+          {friend.name} owes you {Math.abs(friend.balance)}₹
+        </p>
+      )}
+
+      {friend.balance === 0 && <p> You and {friend.name} are even.</p>}
       <Button onClick={() => onSelection(friend)}>
         {isSelected ? "Selected" : "Select"}
       </Button>

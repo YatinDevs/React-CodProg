@@ -2,7 +2,7 @@ import React from "react";
 import "../../index.css";
 import { Friend } from "./Friend";
 export const FriendsList = ({ friends, onSelection, selectedFriend }) => {
-  console.log(friends);
+  // console.log(friends);
   return (
     <ul>
       {friends.map((friend) => {

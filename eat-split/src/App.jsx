@@ -50,10 +50,24 @@ const App = () => {
     setShowAddFriend(false);
   }
 
-  function handleSplitBill(balanceval, id) {
+  function handleSplitBill(balanceval, id, whoIsPaying) {
     setFriends((prev) => {
       console.log(prev, "prev");
-      return [...prev];
+
+      const updatedState = prev.map((friend) => {
+        if (friend.id == id) {
+          if (whoIsPaying == "user") {
+            friend.balance = parseInt(friend.balance) + parseInt(balanceval);
+          } else {
+            friend.balance = parseInt(friend.balance) - parseInt(balanceval);
+          }
+          return friend;
+        }
+
+        return friend;
+      });
+
+      return updatedState;
     });
   }
   return (
