@@ -1,15 +1,31 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 
-function FormSplitBill({ selectedFriend }) {
-  const { name } = selectedFriend;
+function FormSplitBill({ selectedFriend, onSplitBill }) {
+  const { name, id } = selectedFriend;
 
   const [bill, setBill] = useState("");
   const [paidbyUser, setPaidbyUser] = useState("");
   const paidByFriend = bill ? bill - paidbyUser : "";
   const [whoIsPaying, setWhoIsPaying] = useState("user");
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+
+    if (!bill || !paidbyUser) return;
+    console.log("submitted");
+    let balanceval = 0;
+    if (
+      whoIsPaying == "user"
+        ? (balanceval = bill - paidbyUser)
+        : (balanceval = bill - paidByFriend)
+    ) {
+      onSplitBill(balanceval, id);
+    }
+  };
+
   return (
-    <form className="form-split-bill">
+    <form className="form-split-bill" onSubmit={handleSumbit}>
       <h2>Split bill with {name}</h2>
       <label>💰Bill Value 💲 </label>
       <input

@@ -174,3 +174,18 @@ form h2 {
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
 }
+@media (max-width: 600px) {
+  .app {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+.dark {
+  background-color: #1919195d;
+  color: white;
+}
+.light {
+  background-color: #fff;
+  color: #343a40;
+}
