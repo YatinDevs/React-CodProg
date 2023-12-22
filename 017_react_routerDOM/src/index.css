@@ -5,3 +5,10 @@
 body {
   font-family: sans-serif;
 }
+:root {
+  --color-lightest: #3e3b38;
+  --color-light: #2a2520;
+  --color-medium: #ffa94d;
+  --color-dark: #ff922b;
+  --font-color: #fff1e4;
+}

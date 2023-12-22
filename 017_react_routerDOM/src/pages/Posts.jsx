@@ -8,15 +8,16 @@ function Posts() {
   async function fetchPosts() {
     const response = await fetch(endpoint);
     const data = await response.json();
-    // console.log(posts);
+    console.log(data, "postdata");
     setPosts(data);
   }
 
   useEffect(() => {
     fetchPosts();
   }, []);
+
   return (
-    <div>
+    <div className="">
       {posts &&
         posts?.map((post) => {
           return <Post id={post.id} title={post.title} key={post.id} />;
