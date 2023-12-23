@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { redirect, useLoaderData, useParams } from "react-router-dom";
 
-export async function loader({ params }) {
+export async function loader({ params }, { isLoggedIn }) {
   // console.log(args);
 
   const url = "https://jsonplaceholder.typicode.com/posts";
-
+  if (!isLoggedIn) {
+    return redirect("/login");
+  }
   const response = await fetch(`${url}/${params.id}`);
   if (!response.ok) {
     throw new Error("Something Went Wrong");

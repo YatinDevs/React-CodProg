@@ -1,7 +1,7 @@
 // we will take React router DOM  v6 from here.
 
 // 6.4+
-// loaders function.
+// !loaders function.
 // form Element
 // actions
 
@@ -22,4 +22,15 @@
 // 4. (redirect to Error page with errorElement)
 // 5. useRouteError to fetch Error which occured
 
-//
+// Case : Protected Routing we Did
+// But Problem with Loader function
+// API call is done first then Component is Mounted.
+// So.
+
+// ! Protected Network Calls needed in Loader Function.
+
+// we declared AuthProvider to top most parent
+// then passed isLoggedIn auth to required components
+// as args
+// used re-direct function of react-router-dom
+// to handle protected network call on boolean of auth.

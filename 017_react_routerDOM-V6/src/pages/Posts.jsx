@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Post from "../components/Post";
-import { useLoaderData } from "react-router-dom";
+import { redirect, useLoaderData } from "react-router-dom";
 
-export async function loader() {
+export async function loader(args, { isLoggedIn }) {
+  console.log(args, isLoggedIn);
   const endpoint = "https://jsonplaceholder.typicode.com/posts";
-
+  // if user is not logged in then redirect to login
+  if (!isLoggedIn) {
+    return redirect("/login");
+  }
   const response = await fetch(endpoint);
   const data = await response.json();
   // console.log(data, "postdata");
