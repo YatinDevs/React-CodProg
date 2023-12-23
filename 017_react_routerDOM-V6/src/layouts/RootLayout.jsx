@@ -17,6 +17,9 @@ function RootLayout() {
       >
         <ul>
           <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
             <NavLink
               to="/"
               className={(obj) => {

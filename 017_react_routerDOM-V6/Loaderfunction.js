@@ -34,3 +34,7 @@
 // as args
 // used re-direct function of react-router-dom
 // to handle protected network call on boolean of auth.
+
+// !Search Params and Redirect
+// Case :  Now we want that user should go to  previous path
+// location after login
