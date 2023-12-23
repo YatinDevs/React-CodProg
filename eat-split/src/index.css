@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 :root {
   --color-lightest: #3e3b38;
   --color-light: #2a2520;
@@ -14,17 +16,19 @@
 
 html {
   font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body {
-  height: 100vh;
+.main-container {
+  height: auto;
   color: var(--font-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #191919;
+  background-color: #ddd;
+  flex-direction: column;
+  width: 100vw;
 }
 
 .app {
@@ -48,7 +52,6 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .button:hover {
   background-color: var(--color-dark);
 }
@@ -73,8 +76,13 @@ body {
   transition: 0.5s;
 }
 
-.selected,
-.sidebar li:hover {
+.selected-light,
+.sidebar-light li:hover {
+  background-color: #ddd;
+}
+
+.selected-dark,
+.sidebar-dark li:hover {
   background-color: var(--color-lightest);
 }
 
@@ -118,10 +126,21 @@ form {
   align-items: center;
   gap: 1.2rem;
 
-  background-color: var(--color-lightest);
   border-radius: 7px;
 }
 
+.form-light {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+}
+.form-dark {
+  background-color: var(--color-lightest);
+  color: #ddd;
+  border-radius: 10px;
+  padding: 0.5rem 0.2rem;
+  margin: 0.5rem;
+}
 .form-add-friend {
   grid-template-columns: 1fr 1.5fr;
   margin-bottom: 1.6rem;
@@ -153,7 +172,16 @@ select {
   border: 1px solid var(--color-light);
   border-radius: 4px;
   transition: 0.3s;
+}
+
+.input-dark,
+.select-dark {
   background-color: var(--color-light);
+}
+
+.input-light,
+.select-light {
+  background-color: white;
 }
 
 input:focus,
@@ -180,12 +208,26 @@ form h2 {
     gap: 4rem;
   }
 }
-
+/* 
 .dark {
   background-color: #1919195d;
   color: white;
-}
+} */
 .light {
-  background-color: #fff;
-  color: #343a40;
+  background-color: whitesmoke;
+  color: #0c0c0c;
+}
+
+.friendslist-container-dark {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #0f0f0f;
+  border-radius: 10px;
+}
+
+.friendslist-container-light {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c9c9c9;
+  border-radius: 10px;
 }

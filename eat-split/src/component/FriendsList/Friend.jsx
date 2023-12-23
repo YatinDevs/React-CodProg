@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "../Button/Button";
-
+import useTheme from "../../context/themeProvider";
 export const Friend = ({ friend, onSelection, selectedFriend }) => {
   const isSelected = friend.id === selectedFriend?.id;
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <li className={isSelected ? "selected" : ""}>
+    <li className={`${isSelected ? `selected-${theme}` : ""}  `}>
       <img src={friend.image} alt="friends-image" />
       <h3> {friend.name}</h3>
       {friend.balance < 0 && (

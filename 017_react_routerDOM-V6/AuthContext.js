@@ -62,3 +62,10 @@ export default Login;
 */
 
 // ! useLocation and State
+
+/*
+
+  with help of useLocation hook we get object where we can get previouspath state
+  pathname,search,state and key .
+  
+*/

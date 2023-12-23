@@ -53,6 +53,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  console.log("React-Router-V6");
   return (
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>

@@ -71,23 +71,23 @@ const App = () => {
     });
   }
   return (
-    <>
+    <div className="main-container">
       <nav>
         <button style={{ padding: "1rem" }} onClick={toggleTheme}>
           toggle theme
         </button>
       </nav>
       <div className={`app ${theme}`}>
-        <div className="sidebar">
+        <div className={`sidebar sidebar-${theme}`}>
           <FriendsList
             friends={friends}
             onSelection={handleSelector}
             selectedFriend={selectedFriend}
           />
-
           {showAddFriend && (
             <AddFriend handleAddNewFriend={handleAddNewFriend} />
           )}
+
           <Button onClick={handleShowComp}>
             {showAddFriend ? "Close" : "Add Friend"}
           </Button>
@@ -100,7 +100,7 @@ const App = () => {
         )}
         <UserProfile />
       </div>
-    </>
+    </div>
   );
 };
 
