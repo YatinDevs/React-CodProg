@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Post from "../components/Post";
+import { useLoaderData } from "react-router-dom";
 
-const endpoint = "https://jsonplaceholder.typicode.com/posts";
+export async function loader() {
+  const endpoint = "https://jsonplaceholder.typicode.com/posts";
+
+  const response = await fetch(endpoint);
+  const data = await response.json();
+  // console.log(data, "postdata");
+  // setPosts(data);
+  return data;
+}
 
 function Posts() {
-  const [posts, setPosts] = useState(null);
-  async function fetchPosts() {
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    console.log(data, "postdata");
-    setPosts(data);
-  }
+  const posts = useLoaderData();
+  console.log(posts);
+  // const [posts, setPosts] = useState(null);
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   fetchPosts();
+  // }, []);
+
+  // getting data from loader
 
   return (
     <div className="">

@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Post from "../components/Post";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const url = "https://jsonplaceholder.typicode.com/posts";
-function PostDetails() {
-  const { id } = useParams(); // value key  --> will be name given in path variables
-  console.log(id);
+export async function loader({ params }) {
+  // console.log(args);
 
-  const [post, setPost] = useState(null);
-  async function fetchPosts() {
-    const response = await fetch(`${url}/${id}`);
-    const data = await response.json();
-    console.log(data);
-    setPost(data);
+  const url = "https://jsonplaceholder.typicode.com/posts";
+
+  const response = await fetch(`${url}/${params.id}`);
+  if (!response.ok) {
+    throw new Error("Something Went Wrong");
   }
+  const data = await response.json();
+  return data;
+  // return null;
+}
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
+function PostDetails() {
+  const post = useLoaderData();
+  console.log(post);
+  const { id } = useParams(); // value key  --> will be name given in path variables
+  // console.log(id);
   return (
     <div
       style={{

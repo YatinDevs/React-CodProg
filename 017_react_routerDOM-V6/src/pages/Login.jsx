@@ -7,7 +7,7 @@ function Login() {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location, "loginpage");
+  // console.log(location, "loginpage");
   const previousPath = location.state?.previousPath || "/";
 
   function handleLogin() {

@@ -20,7 +20,8 @@ import {
 import RootLayout from "./layouts/RootLayout";
 import RequireAuth from "./components/RequireAuth";
 import { AuthProvider } from "./context/AuthProvider";
-
+import { loader as fetchPosts } from "./pages/Posts";
+import { loader as fetchPostDetails } from "./pages/PostDetails";
 // step 2: create router
 
 // posts/:id --> path variable
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route
         path="/posts"
+        loader={fetchPosts}
         element={
           <RequireAuth>
             <Posts />
@@ -40,6 +42,8 @@ const router = createBrowserRouter(
       />
       <Route
         path="/posts/:id"
+        errorElement={<Error />}
+        loader={fetchPostDetails}
         element={
           <RequireAuth>
             <PostDetails />
@@ -53,7 +57,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  console.log("React-Router-V6");
+  // console.log("React-Router-V6");
   return (
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
