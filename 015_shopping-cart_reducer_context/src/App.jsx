@@ -1,12 +1,12 @@
 import React from "react";
 import Products from "./components/Products/Products";
+import CartProvider from "./context/CartProvider";
 
 function App() {
   return (
-    <div>
-      <h1>Application</h1>
+    <CartProvider>
       <Products />
-    </div>
+    </CartProvider>
   );
 }
 
