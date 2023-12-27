@@ -19,7 +19,7 @@
 
 */
 .modalBackdrop {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -27,7 +27,7 @@
   background-color: rgba(50, 50, 50, 0.8);
 }
 .modalContent {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   z-index: 2;
   background-color: #fff;
   position: fixed;
@@ -39,7 +39,7 @@
   transform-origin: 50% 50%;
   max-height: 700px;
   height: 75%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 1rem;
   border-radius: 0.5rem;
 }

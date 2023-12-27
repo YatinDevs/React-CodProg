@@ -8,6 +8,12 @@ function Product({ id, title, price, img }) {
   const handleAdd = () => {
     console.log("handle add called");
 
+    for (let item of cart) {
+      if (item.id === id) {
+        alert("Item Already added to cart");
+        return;
+      }
+    }
     const newCartItem = {
       id: id,
       price: price,
@@ -16,6 +22,7 @@ function Product({ id, title, price, img }) {
       quantity: 1,
     };
     addItemtoCart(newCartItem);
+    alert("Item Added");
   };
   return (
     <div className="product-container">

@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* for modal  reset*/
+  overflow-y: scroll;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
