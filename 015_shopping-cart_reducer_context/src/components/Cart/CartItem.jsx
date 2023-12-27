@@ -1,41 +1,52 @@
 import React from "react";
+import styles from "./cartItem.module.css";
 import { useCart } from "../../context/CartProvider";
-import "./cart.css";
-function CartItem({ id, title, price, quantity, img }) {
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { ImCross } from "react-icons/im";
+function CartItem({ id, price, img, title, quantity }) {
   const { increaseQuantity, decreaseQuantity, removeItemfromCart } = useCart();
   return (
-    <div className="cart-container">
-      <img src={img} alt={title} />
-      <p>Product : {title}</p>
-      <p>
-        Price : {price}*{quantity} = {price * quantity}
-      </p>
-      <button
-        onClick={() => {
-          // Base Case
-          if (quantity <= 1) {
-            return;
-          }
-          decreaseQuantity(id);
-        }}
-      >
-        -
-      </button>
-      {quantity}
-      <button
-        onClick={() => {
-          increaseQuantity(id);
-        }}
-      >
-        +
-      </button>
-      <button
-        onClick={() => {
-          removeItemfromCart(id);
-        }}
-      >
-        Remove Item
-      </button>
+    <div className={styles.cartItem}>
+      {/* left  */}
+      <div className={styles.imgAndTitle}>
+        <div className={styles.imgContainer}>
+          <img src={img} alt={title} className={styles.cartImage} />
+        </div>
+        <h3>{title}</h3>
+      </div>
+      {/* right  */}
+      <div className={styles.otherControls}>
+        <div className={styles.qtyInput}>
+          <button
+            onClick={() => {
+              if (quantity <= 1) {
+                return;
+              }
+              decreaseQuantity(id);
+            }}
+          >
+            <AiOutlineMinus />
+          </button>
+          <span className={styles.quantityDisplay}>{quantity}</span>
+          <button
+            onClick={() => {
+              increaseQuantity(id);
+            }}
+          >
+            <AiOutlinePlus />
+          </button>
+        </div>
+        <p> &#8377;{price * quantity}</p>
+        <button
+          className={styles.removeItemBtn}
+          onClick={() => {
+            removeItemfromCart(id);
+          }}
+        >
+          <ImCross />
+        </button>
+      </div>
+      {/* ----------------- old ------------  */}
     </div>
   );
 }

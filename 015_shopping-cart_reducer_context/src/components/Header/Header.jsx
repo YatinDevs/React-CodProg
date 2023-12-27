@@ -32,7 +32,9 @@ function Header() {
           <button className={styles.showcartBtn} onClick={handleCartModal}>
             <span className={styles.cartIconandNumber}>
               <BsCartFill />
-              <span className={styles.number}>{totalQuantity}</span>
+              {!!totalQuantity && (
+                <span className={styles.number}>{totalQuantity}</span>
+              )}
             </span>
             <span>Cart</span>
           </button>

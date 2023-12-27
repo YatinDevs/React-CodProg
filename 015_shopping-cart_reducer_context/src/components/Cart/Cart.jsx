@@ -1,6 +1,9 @@
 import React from "react";
 import { useCart } from "../../context/CartProvider";
 import CartItem from "./CartItem";
+import styles from "./cart.module.css";
+import { ImCross } from "react-icons/im";
+
 function Cart({ handleCartModal }) {
   const { cart, addItemtoCart } = useCart();
   console.log(cart, addItemtoCart);
@@ -17,20 +20,29 @@ function Cart({ handleCartModal }) {
   if (cart.length === 0)
     return (
       <>
-        <h1>No Items Found</h1>{" "}
-        <button onClick={handleCartModal}>Close Cart</button>
+        <div className={styles.cart}>
+          <h1>No Items Found</h1>{" "}
+          <button className={styles.closeCartBtn} onClick={handleCartModal}>
+            <ImCross />
+          </button>
+        </div>
       </>
     );
   return (
     <>
-      <div>
-        <h1>Cart</h1>
-        <div className="cart">
+      <div className={styles.cart}>
+        <h1>Shopping Cart</h1>
+
+        <div className={styles.cartHeading}>
           {cart && cart.map((item) => <CartItem {...item} key={item.id} />)}
         </div>
-        <button onClick={handleCartModal}>Close Cart</button>
+
+        <button className={styles.closeCartBtn} onClick={handleCartModal}>
+          <ImCross />
+        </button>
+
+        <h4>Total Amount : &#8377;{totalAmount}</h4>
       </div>
-      <h1>Total Amount : {totalAmount}</h1>
     </>
   );
 }

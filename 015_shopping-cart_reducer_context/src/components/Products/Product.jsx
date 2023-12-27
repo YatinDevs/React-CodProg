@@ -1,6 +1,7 @@
 import React from "react";
-import "./products.css";
+import styles from "./product.module.css";
 import { useCart } from "../../context/CartProvider";
+import { toast } from "react-toastify";
 
 function Product({ id, title, price, img }) {
   const { cart, addItemtoCart } = useCart();
@@ -22,15 +23,16 @@ function Product({ id, title, price, img }) {
       quantity: 1,
     };
     addItemtoCart(newCartItem);
-    alert("Item Added");
+    toast.info("Item Added!");
   };
   return (
-    <div className="product-container">
-      <p>{id}</p>
-      <img src={img} alt={`image_${title}`} height={200} />
-      <h3> title : {title}</h3>
-      <h4> price : {price}</h4>
-      <button onClick={handleAdd}>Add to Cart</button>
+    <div className={styles.product}>
+      <img src={img} alt={`image_${title}`} className={styles.productImage} />
+      <p className={styles.title}> Title : {title}</p>
+      <p className={styles.price}> Price : {price} &#8377;</p>
+      <button onClick={handleAdd} className={styles.addToCartBtn}>
+        Add to Cart
+      </button>
     </div>
   );
 }
