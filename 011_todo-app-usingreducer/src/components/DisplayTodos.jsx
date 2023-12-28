@@ -4,9 +4,9 @@ function DisplayTodos({ todos, dispatch }) {
   console.log(todos);
   return (
     <ul>
-      {todos.map((todo) => (
+      {/* {todos.map((todo) => (
         <Todos {...todo} key={todo.id} dispatch={dispatch} />
-      ))}
+      ))} */}
     </ul>
   );
 }
