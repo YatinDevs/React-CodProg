@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Book tickets",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Book Movie Tickets",
+      "completed": false
+    },
+    {
+      "title": "Book AirIndia Flights",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "add",
+      "completed": false,
+      "id": 4
+    }
+  ]
+}
