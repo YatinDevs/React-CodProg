@@ -21,7 +21,7 @@ export const addTodo = createAsyncThunk("todos/add", async (title) => {
     completed: false,
   });
   console.log("posting", res.data);
-  // await pause(1400);
+  await pause(1400);
 
   // console.log(res.data);
   return res.data;
@@ -35,8 +35,6 @@ const pause = (duration) => {
 const todoSlice = createSlice({
   name: "todos",
   initialState: {
-    isLoading: false,
-    error: null,
     data: [],
   },
   // incase of redux async thunk
@@ -44,36 +42,28 @@ const todoSlice = createSlice({
     // Fetch Todo
     builders.addCase(fetchTodos.pending, (state, action) => {
       console.log("fetchTodos,pending state..");
-      state.isLoading = true;
     });
     builders.addCase(fetchTodos.fulfilled, (state, action) => {
       console.log("fetchTodos,fullfilled state..");
-      state.isLoading = false;
       state.data = action.payload;
       console.log(action.payload);
     });
     builders.addCase(fetchTodos.rejected, (state, action) => {
       console.log("fetchTodos,rejected state..");
-      state.isLoading = false;
       console.log(action.error);
-      state.error = action.error;
     });
     // AddTodo
     builders.addCase(addTodo.pending, (state, action) => {
       console.log("addTodo,pending state..");
-      state.isLoading = true;
     });
     builders.addCase(addTodo.fulfilled, (state, action) => {
       console.log("addTodo,fullfilled state..");
-      state.isLoading = false;
       state.data.push(action.payload);
       console.log(action.payload);
     });
     builders.addCase(addTodo.rejected, (state, action) => {
       console.log("addTodo,rejected state..");
-      state.isLoading = false;
       console.log(action.error);
-      state.error = action.error;
     });
   },
 });

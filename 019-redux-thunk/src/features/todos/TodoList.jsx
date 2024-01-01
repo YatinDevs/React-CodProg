@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchTodos } from "./todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function TodoList() {
-  const { data: todos, isLoading, error } = useSelector((state) => state.todos);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const { data: todos } = useSelector((state) => state.todos);
+  console.log(todos);
 
   const dispatch = useDispatch();
   // we use to do this : before
@@ -14,7 +18,18 @@ function TodoList() {
   // lets create thunk now :
 
   useEffect(() => {
-    dispatch(fetchTodos());
+    setIsLoading(true);
+    dispatch(fetchTodos())
+      .unwrap()
+      .then(() => {
+        // setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   if (error) {

@@ -44,3 +44,5 @@ Currently, two official plugins are available:
 # create Async Thunk for POST Request
 
 # create separate Loading and error states for different Requests
+
+# create Async Thunk for Delete Request and PATCH req
