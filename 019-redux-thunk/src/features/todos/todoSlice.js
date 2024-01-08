@@ -4,7 +4,7 @@ import axios from "axios";
 // can consider this action dispatcher
 export const fetchTodos = createAsyncThunk("todos/fetch", async () => {
   const res = await axios.get("http://localhost:8001/todos");
-  // console.log(res.data);
+  console.log(res);
   // await pause(1400);
   return res.data;
 }); // should be string action type
@@ -46,7 +46,7 @@ const todoSlice = createSlice({
     builders.addCase(fetchTodos.fulfilled, (state, action) => {
       console.log("fetchTodos,fullfilled state..");
       state.data = action.payload;
-      console.log(action.payload);
+      console.log(action);
     });
     builders.addCase(fetchTodos.rejected, (state, action) => {
       console.log("fetchTodos,rejected state..");

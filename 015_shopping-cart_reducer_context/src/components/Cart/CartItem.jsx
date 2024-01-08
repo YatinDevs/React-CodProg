@@ -3,14 +3,14 @@ import styles from "./cartItem.module.css";
 import { useCart } from "../../context/CartProvider";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-function CartItem({ id, price, img, title, quantity }) {
+function CartItem({ id, price, thumbnail, title, quantity }) {
   const { increaseQuantity, decreaseQuantity, removeItemfromCart } = useCart();
   return (
     <div className={styles.cartItem}>
       {/* left  */}
       <div className={styles.imgAndTitle}>
         <div className={styles.imgContainer}>
-          <img src={img} alt={title} className={styles.cartImage} />
+          <img src={thumbnail} alt={title} className={styles.cartImage} />
         </div>
         <h3>{title}</h3>
       </div>

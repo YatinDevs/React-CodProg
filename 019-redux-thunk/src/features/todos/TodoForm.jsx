@@ -37,7 +37,7 @@ function TodoForm() {
         <button type="submit" disabled={isLoading}>
           {isLoading ? "adding..." : "Add Todo"}
         </button>
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+        {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
       </form>
     </div>
   );
